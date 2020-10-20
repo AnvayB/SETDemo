@@ -18,12 +18,14 @@ public class UserFileDemo {
 		}
 	}
 
-	public void addRecords(long iD, String fName, String lName) {
+	public void addRecords(long iD, String fName, String lName, String pass) {
 		// add ID, fName, lName
-		f.format("%s%s%s", iD + " ", fName + " ", lName + " ");
+		f.format("%s%s%s%s", iD + " ", "\n"+fName + " ", "\n"+lName + " ", "\n"+pass);
 	}
 
 	public void closeFile() {
 		f.close();
 	}
+
+	
 }
