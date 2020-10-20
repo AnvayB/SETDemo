@@ -46,7 +46,7 @@ public class Balance {
 		Balance b = new Balance();
 
 		// SET BALANCE
-		sop("Set current balance: ");
+		sop("Set the balance: ");
 		int amount = scan.nextInt();
 
 //		
@@ -55,33 +55,36 @@ public class Balance {
 //		b.addRecord(amount);
 //		b.closeFile();
 
-		sop("Please press 'y' to confirm this action. ");
+		sop("Do you want to confirm this action? (y/n)");
 		String confirmSet = scan.next();
 
 		if (!(confirmSet.equals("y"))) {
 			sop("Please restart application and enter correct amount.");
 		} else {
 			b.setBalance(amount);
-
-			File file = new File("/Users/anvaybhanap/Desktop/Github/Spartan Expense Tracker/SET2/BalanceRecord.txt");
-			Scanner sc = new Scanner(file);
-			sop("Balance set to $" + sc.next());
+			
 
 			// ADD TO BALANCE
 			sop("Add to balance: ");
 			int addition = scan.nextInt();
 
-			sop("Please press 'y' to confirm this action. ");
+			sop("Do you want to confirm this action? (y/n) ");
 			String confirmAdd = scan.next();
 
 			if (!(confirmAdd.equals("y"))) {
 				sop("Please restart application and enter correct amount.");
 			} else {
 				b.addInput(addition);
-				File file2 = new File("/Users/anvaybhanap/Desktop/Github/Spartan Expense Tracker/SET2/BalanceRecord.txt");
-				Scanner sc2 = new Scanner(file);
-				sop("Balance set to $" + sc2.next());
 				
+				
+				//CHECK BALANCE
+				File file = new File("/Users/anvaybhanap/Desktop/Github/Spartan Expense Tracker/SETDemo/BalanceRecord.txt");
+				Scanner sc = new Scanner(file);
+				sop("\nTotal Balance in account: $" + sc.next());
+				
+				
+				sop("\nThank you for using the Spartan Expense Tracker."
+						+ "\nHave a nice day!");
 
 //		
 			}
